@@ -3,6 +3,8 @@ const app = express()
 const hbs = require("hbs")
 require("./hbs/helpers/helpers")
 
+const port = process.env.PORT || 3000
+
 // Giving static content
 app.use(express.static(__dirname + "/public"))
 
@@ -24,6 +26,6 @@ app.get("/about", (req, res) => {
   })
 })
 
-app.listen(3000, () => {
-  console.log("Listening requests on port 3000")
+app.listen(port, () => {
+  console.log(`Listening requests on port ${port}`)
 })
