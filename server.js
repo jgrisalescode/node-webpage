@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 const hbs = require("hbs")
+require("./hbs/helpers/helpers")
 
 // Giving static content
 app.use(express.static(__dirname + "/public"))
@@ -18,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about", {
-    name: "Julián",
+    name: "julián",
     year: new Date().getFullYear()
   })
 })
